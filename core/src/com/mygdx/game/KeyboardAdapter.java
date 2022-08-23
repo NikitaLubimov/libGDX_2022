@@ -27,8 +27,8 @@ public class KeyboardAdapter extends InputAdapter {
     public boolean keyUp(int keycode) {
 //        if (Gdx.input.isKeyPressed(Input.Keys.D)) rightPress = false;
 //        if (Gdx.input.isKeyPressed(Input.Keys.A)) leftPress = false;
-        if (keycode == Input.Keys.A) leftPress = true;
-        if (keycode == Input.Keys.D) rightPress = true;
+        if (keycode == Input.Keys.A) leftPress = false;
+        if (keycode == Input.Keys.D) rightPress = false;
         return super.keyUp(keycode);
     }
 
