@@ -27,7 +27,7 @@ public class Anim {
                 region1[count++] = regions0[i][j];
             }
         }
-        anm = new Animation<TextureRegion>(1 / 20f, region1);
+        anm = new Animation<TextureRegion>(1 / 4f, region1);
         anm.setPlayMode(playMode);
         time += Gdx.graphics.getDeltaTime();
         position.set(x, y);
@@ -38,7 +38,7 @@ public class Anim {
     }
 
     public void setTime(float time) {
-        this.time = time;
+        this.time += time;
     }
 
     public void zeroTime() {
