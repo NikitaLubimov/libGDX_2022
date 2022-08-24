@@ -12,6 +12,7 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ScreenUtils;
@@ -66,7 +67,9 @@ public class GameScreen implements Screen {
 
         rectObj = map.getLayers().get("Объекты").getObjects().getByType(RectangleMapObject.class);
         for (RectangleMapObject rect : rectObj) {
-            physics.addObject(rect);
+            if (rect.getName() == null){
+                physics.addObject(rect);
+            }
         }
     }
 
@@ -79,8 +82,8 @@ public class GameScreen implements Screen {
     public void render(float delta) {
 
         // управление камерой право лево
-        if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) camera.position.x -= STEP;
-        if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) camera.position.x += STEP;
+        if (Gdx.input.isKeyPressed(Input.Keys.D)) body.applyForceToCenter(new Vector2(100000,0), true);
+        if (Gdx.input.isKeyPressed(Input.Keys.A)) body.applyForceToCenter(new Vector2(-100000,0), true);
         // зумирование карты ( 1- оригинальное значение )
         if (Gdx.input.isKeyPressed(Input.Keys.P)) camera.zoom -= 0.01f;
         if (Gdx.input.isKeyPressed(Input.Keys.M) && camera.zoom > 0) camera.zoom += 0.01f;

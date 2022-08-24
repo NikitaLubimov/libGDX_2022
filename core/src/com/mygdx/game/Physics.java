@@ -35,7 +35,7 @@ public class Physics {
         polygonShape.setAsBox(rectangle.width/2,rectangle.height/2); // метод формирующий наш объект в виде коробки
 
         fdef.shape = polygonShape;
-        fdef.friction = 10; // параметр трения (0-10, где 0 очень скользкий)
+        fdef.friction = 1; // параметр трения (0-10, где 0 очень скользкий)
         fdef.density = 1; // плотность
         fdef.restitution = 0; // прыгучесть (0-10, где 0 инерция вся поглощается)
 
