@@ -4,16 +4,19 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 
 public class Anim {
 
     private Texture img;
+    private TextureAtlas atlas;
     private Animation<TextureRegion> anm;
     private float time;
-    final Vector2 position = new Vector2();
+    public final Vector2 position = new Vector2();
 
+    //Констуктор для создания анимации через метод split
     public Anim(String name, int col, int row, Animation.PlayMode playMode, float x, float y) {
         img = new Texture(name);
         TextureRegion region0 = new TextureRegion(img);
@@ -27,10 +30,22 @@ public class Anim {
                 region1[count++] = regions0[i][j];
             }
         }
+
         anm = new Animation<TextureRegion>(1 / 4f, region1);
         anm.setPlayMode(playMode);
         time += Gdx.graphics.getDeltaTime();
         position.set(x, y);
+
+    }
+
+    //Констуктор для создания анимации через атлас
+    public Anim(String pathAtlas, Animation.PlayMode playMode, float x, float y) {
+        atlas = new TextureAtlas(pathAtlas);
+        anm = new Animation<TextureRegion>(1 / 4f, atlas.findRegions("Run"));
+        anm.setPlayMode(playMode);
+        time += Gdx.graphics.getDeltaTime();
+        position.set(x, y);
+
     }
 
     public TextureRegion getFrame() {
@@ -53,12 +68,15 @@ public class Anim {
         anm.setPlayMode(playMode);
     }
 
-    public void dispose() {
+    public void disposeImg() {
         img.dispose();
+    }
+
+    public void disposeAtlas() {
+        atlas.dispose();
     }
 
     public void moveTo(Vector2 direction) {
         position.add(direction);
     }
-
 }
