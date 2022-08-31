@@ -1,0 +1,62 @@
+
+RunMyHero.png
+size: 512, 64
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+Run
+  rotate: false
+  xy: 2, 5
+  size: 37, 48
+  orig: 37, 48
+  offset: 0, 0
+  index: 3
+Run
+  rotate: false
+  xy: 41, 2
+  size: 36, 51
+  orig: 36, 51
+  offset: 0, 0
+  index: 2
+Run
+  rotate: false
+  xy: 79, 5
+  size: 35, 48
+  orig: 35, 48
+  offset: 0, 0
+  index: 4
+Run
+  rotate: false
+  xy: 116, 4
+  size: 35, 49
+  orig: 35, 49
+  offset: 0, 0
+  index: 1
+Run
+  rotate: false
+  xy: 153, 5
+  size: 34, 48
+  orig: 34, 48
+  offset: 0, 0
+  index: 7
+Run
+  rotate: false
+  xy: 189, 5
+  size: 34, 48
+  orig: 34, 48
+  offset: 0, 0
+  index: 8
+Run
+  rotate: false
+  xy: 225, 6
+  size: 33, 47
+  orig: 33, 47
+  offset: 0, 0
+  index: 5
+Run
+  rotate: false
+  xy: 260, 5
+  size: 32, 48
+  orig: 32, 48
+  offset: 0, 0
+  index: 6

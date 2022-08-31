@@ -17,7 +17,7 @@ public class Anim {
     public final Vector2 position = new Vector2();
 
     //Констуктор для создания анимации через метод split
-    public Anim(String name, int col, int row, Animation.PlayMode playMode, float x, float y) {
+    public Anim(String name, int col, int row, Animation.PlayMode playMode) {
         img = new Texture(name);
         TextureRegion region0 = new TextureRegion(img);
         int xCnt = region0.getRegionWidth() / col;
@@ -34,18 +34,14 @@ public class Anim {
         anm = new Animation<TextureRegion>(1 / 4f, region1);
         anm.setPlayMode(playMode);
         time += Gdx.graphics.getDeltaTime();
-        position.set(x, y);
-
     }
 
     //Констуктор для создания анимации через атлас
-    public Anim(String pathAtlas, Animation.PlayMode playMode, float x, float y) {
+    public Anim(String pathAtlas, Animation.PlayMode playMode) {
         atlas = new TextureAtlas(pathAtlas);
-        anm = new Animation<TextureRegion>(1 / 4f, atlas.findRegions("Run"));
+        anm = new Animation<TextureRegion>(1 / 4f, atlas.findRegions("Idle"));
         anm.setPlayMode(playMode);
         time += Gdx.graphics.getDeltaTime();
-        position.set(x, y);
-
     }
 
     public TextureRegion getFrame() {
