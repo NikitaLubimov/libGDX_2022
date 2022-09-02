@@ -43,7 +43,7 @@ public class GameScreen implements Screen {
     public GameScreen(Main main) {
         this.main = main;
         batch = new SpriteBatch();
-        myHero = new Anim("atlas/Idle.png", 8, 1, Animation.PlayMode.LOOP);
+        myHero = new Anim("atlasHeroOne/idleMyHero.atlas", Animation.PlayMode.LOOP);
         inputProcessor = new KeyboardAdapter();
         Gdx.input.setInputProcessor(inputProcessor);
         camera = new OrthographicCamera(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());  // Инициализировали камеру, установили видомость камеры по размеру нашего окна
@@ -67,7 +67,7 @@ public class GameScreen implements Screen {
 
         rectObj = map.getLayers().get("Объекты").getObjects().getByType(RectangleMapObject.class);
         for (RectangleMapObject rect : rectObj) {
-            if (rect.getName() == null){
+            if (rect.getName() == null) {
                 physics.addObject(rect);
             }
         }
@@ -82,14 +82,14 @@ public class GameScreen implements Screen {
     public void render(float delta) {
 
         // управление камерой право лево
-        if (Gdx.input.isKeyPressed(Input.Keys.D)) body.applyForceToCenter(new Vector2(100000,0), true);
-        if (Gdx.input.isKeyPressed(Input.Keys.A)) body.applyForceToCenter(new Vector2(-100000,0), true);
+        if (Gdx.input.isKeyPressed(Input.Keys.D)) body.applyForceToCenter(new Vector2(50000, 0), true);
+        if (Gdx.input.isKeyPressed(Input.Keys.A)) body.applyForceToCenter(new Vector2(-50000, 0), true);
         // зумирование карты ( 1- оригинальное значение )
         if (Gdx.input.isKeyPressed(Input.Keys.P)) camera.zoom -= 0.01f;
         if (Gdx.input.isKeyPressed(Input.Keys.M) && camera.zoom > 0) camera.zoom += 0.01f;
 
         camera.position.x = body.getPosition().x;
-        camera.position.y = body.getPosition().y;
+        camera.position.y = body.getPosition().y*1.5f;
         camera.update();
 
         ScreenUtils.clear(0, 0, 0, 1);
@@ -122,10 +122,8 @@ public class GameScreen implements Screen {
         mapRenderer.render(layers); // рендер всех слоёв
 
         batch.setProjectionMatrix(camera.combined); // установить матрицу проекции КАМЕРЫ, ранее это выполнял сам Batch
-        rectangleHero.x = body.getPosition().x - rectangleHero.width/2;
-        rectangleHero.y = body.getPosition().y - rectangleHero.height/2;
         batch.begin();
-        batch.draw(myHero.getFrame(), rectangleHero.x,  rectangleHero.y);
+        batch.draw(myHero.getFrame(), body.getPosition().x - rectangleHero.width/2, body.getPosition().y - rectangleHero.height/2, rectangleHero.width, rectangleHero.height);
         batch.end();
         myHero.setTime(Gdx.graphics.getDeltaTime());
         physics.debugDraw(camera);
@@ -159,7 +157,7 @@ public class GameScreen implements Screen {
     @Override
     public void dispose() {
         batch.dispose();
-        myHero.disposeImg();
+        myHero.disposeAtlas();
         map.dispose();
         shapeRenderer.dispose();
     }
