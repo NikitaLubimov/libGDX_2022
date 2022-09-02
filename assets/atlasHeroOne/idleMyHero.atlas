@@ -1,0 +1,62 @@
+
+idleMyHero.png
+size: 512, 64
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+IdleMyHero
+  rotate: false
+  xy: 0, 0
+  size: 37, 58
+  orig: 37, 58
+  offset: 0, 0
+  index: 1
+IdleMyHero
+  rotate: false
+  xy: 37, 0
+  size: 37, 58
+  orig: 37, 58
+  offset: 0, 0
+  index: 2
+IdleMyHero
+  rotate: false
+  xy: 74, 0
+  size: 37, 58
+  orig: 37, 58
+  offset: 0, 0
+  index: 3
+IdleMyHero
+  rotate: false
+  xy: 111, 0
+  size: 37, 58
+  orig: 37, 58
+  offset: 0, 0
+  index: 4
+IdleMyHero
+  rotate: false
+  xy: 148, 0
+  size: 37, 58
+  orig: 37, 58
+  offset: 0, 0
+  index: 5
+IdleMyHero
+  rotate: false
+  xy: 185, 0
+  size: 37, 58
+  orig: 37, 58
+  offset: 0, 0
+  index: 6
+IdleMyHero
+  rotate: false
+  xy: 222, 0
+  size: 37, 58
+  orig: 37, 58
+  offset: 0, 0
+  index: 7
+IdleMyHero
+  rotate: false
+  xy: 259, 0
+  size: 37, 58
+  orig: 37, 58
+  offset: 0, 0
+  index: 8
