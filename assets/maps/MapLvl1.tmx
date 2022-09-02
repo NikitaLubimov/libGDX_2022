@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.9" tiledversion="1.9.1" orientation="orthogonal" renderorder="right-down" width="95" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="45">
+ <tileset firstgid="1" name="main_lev_build" tilewidth="16" tileheight="16" tilecount="10240" columns="128">
+  <image source="main_lev_build.png" width="2048" height="1280"/>
+ </tileset>
+ <tileset firstgid="10241" name="other_and_decorative" tilewidth="16" tileheight="16" tilecount="1600" columns="40">
+  <image source="other_and_decorative.png" width="640" height="640"/>
+ </tileset>
+ <tileset firstgid="11841" name="01 background" tilewidth="16" tileheight="16" tilecount="624" columns="26">
+  <image source="01 background.png" width="426" height="384"/>
+ </tileset>
+ <tileset firstgid="12465" name="animDecor2" tilewidth="16" tileheight="32" tilecount="16" columns="16">
+  <image source="animDecor2.png" width="256" height="32"/>
+  <tile id="1"/>
+  <tile id="2"/>
+  <tile id="3"/>
+  <tile id="4"/>
+  <tile id="5"/>
+  <tile id="6"/>
+  <tile id="7"/>
+  <tile id="8">
+   <animation>
+    <frame tileid="8" duration="100"/>
+    <frame tileid="9" duration="100"/>
+    <frame tileid="10" duration="100"/>
+    <frame tileid="11" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="9"/>
+  <tile id="10"/>
+  <tile id="11"/>
+  <tile id="12">
+   <animation>
+    <frame tileid="4" duration="1000"/>
+    <frame tileid="5" duration="1000"/>
+    <frame tileid="6" duration="1000"/>
+    <frame tileid="7" duration="1000"/>
+   </animation>
+  </tile>
+  <tile id="14"/>
+  <tile id="0">
+   <animation>
+    <frame tileid="0" duration="100"/>
+    <frame tileid="1" duration="100"/>
+    <frame tileid="2" duration="100"/>
+    <frame tileid="3" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="13">
+   <animation>
+    <frame tileid="4" duration="100"/>
+    <frame tileid="5" duration="100"/>
+    <frame tileid="6" duration="100"/>
+    <frame tileid="7" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="15"/>
+ </tileset>
+ <tileset firstgid="12481" name="animDiamond" tilewidth="16" tileheight="48" tilecount="4" columns="4">
+  <image source="animDiamond.png" width="64" height="64"/>
+  <tile id="0">
+   <animation>
+    <frame tileid="0" duration="100"/>
+    <frame tileid="1" duration="1000"/>
+    <frame tileid="2" duration="100"/>
+    <frame tileid="3" duration="1000"/>
+   </animation>
+  </tile>
+  <tile id="3">
+   <animation>
+    <frame tileid="0" duration="500"/>
+    <frame tileid="1" duration="500"/>
+    <frame tileid="2" duration="500"/>
+    <frame tileid="3" duration="500"/>
+   </animation>
+  </tile>
+ </tileset>
+ <layer id="5" name="С4.Фон бекграунд" width="95" height="16">
+  <data encoding="base64" compression="zlib">
+   eJzt07cNQlEMQNE/0duBDDOQYQYyzECGGcgwAxlmIE7CbX7pAonCQr7SaVxZlux5lmV9W8B5XhAhhBFB1Mlz63cluWcKaWSQRc7Jc+t3lbhnGRVUUUPdyXNtSf8ZQxwJhTv7tdmtgy566GPg5Lm2pP/Mo4Ciwp39Juw2xQxzLLB08lxb0n820ERL4c5+W3bbYY8Djjg5ea4t6T+HGGGscGe/G7vd8cATL7ydPNeW9J8rrLFRuPO/JP3nGRdc7faWZVmWZVlf9wHY/2TP
+  </data>
+ </layer>
+ <layer id="2" name="С3.Фон стена" width="95" height="16" offsetx="110" offsety="-7">
+  <data encoding="base64" compression="zlib">
+   eJzt1tlq21AQBmCRNmSDtGnySq4tS/JCmkf2os2SSPw+/XLZm3RMBbmoB767n8NhmNFRkpzrXP9flRdJUlHT0HKgo2e4GC9zrj8r/ZIkczJyChYsWbFmcp0kP5kyI2VORk5xHTvns2pzlSRbduwpqahpaK8+516lnlTUNLQc6OgZ2Ojtlh17SipqGtrr2Dnlgww1DS0HOnoGXr8nyRtHynt5ahpaDnT0DPexTGR2xt7/SKVf3YOMnIIFS1asmdy4O1NmpMzJyCluYudE+vSs/794eRiv95HZieztKZnQ3OtJRU1Dy4GOnoGN3m7ZsaekoqahvYmdk35zLzJyChYsWbHmVc/fOD7E8pFMZHZCe3tCpgzMfnrpHmTkFCxYsmLN5NbdmTIjZU5GTnEbO6fUh4qahpYDHT3De+9/6D3HH7F8JBOZncjenpJJA7Nf6klFTUPLgY6egY3ebtmxp6SipqG9jZ2T+obPycgpWLBkxZrnR98cXh5j+UgmMjuRvT0lU0Z6H3g/JnfuzpQZKXMycoq74DukDxU1DS0HOnoGXvX8jeNjLB/JRGYnsrenZN7n/6/fnJHfmA8zvuFzMnIKFixZseb5ydzz8hTLRzKh2Qns7SmZMtD7sd+Yf/7H1PM3jk+xfCQz9kyH5v4yMPcjvzEfZcaqU/89x57p0NwHej/2G/NR5lznOte5fgN2zA9+
+  </data>
+ </layer>
+ <layer id="4" name="C2.Фон декор" width="95" height="16">
+  <data encoding="base64" compression="zlib">
+   eJztlctOE1Ech89zaJTIpZS2wFDAhFeQAAkilBZI3Gp0AVtUKJeELQSWLEAQCpKwBAIJCStFpRd9AI0+AGzkIvo1DGEyzAxzZsYGwvySL+1MzvlPz/c/cyqEHz9+9AkFhQgHrcdEKoSohCqoBgVqIFphPD5Kvdorat725L23wuMrPLXh+Am0QwfEoBPiJu7j1EsEC9cDJcJegCjUQh3Uw8PI/3+202i9p/nMQBZysKNcjOvH8St4DW9gAAYhqXG/rYhLsdODaZP+aVPNXMWihzEcd0IcEtAF3dCjui8OCVESOvter9Yp4zoQMq7X4GC/yO6zLY2vQ+YdwTGc6Gq8xc8czMM7WIBFSNnwls95D4yee55V3T3tmA7mxizWNYDjQUjCEAzDCIyq7h/huFH13K3WaeK62cT9Uwfu9WuUyQM8FkMJlOqc7nL9CT7DF9iDNGRM3Ads9sSrLOB4EVKwBMvwHlZU97047lM9j9jwM2YyRn825GP0vt/kvKB3LyX6t4fjNGQgCzn4Ct88Pu+tzgYnibMfEtBl8v7ZzTNcPfdov09SZ0qi1m8cH8IRHMMJ/IFTj91bnQ35zNCPWYmeJHE+BMMu3Y/zWyY8cr9JnS0XtU5Zy1/J9TiZo88HvH+UcJ/ieUuw7PK567ja8Mj9T+r8clErEBaiPOx+zhpn+Xzw7NNO9hl7IOE+g/Ms5Gy4v4eP+1Bk4OU7934U+D/WLM04bJF0bzTHar1GucO4u9fEgR8/fvz4KVz+AagOjSY=
+  </data>
+ </layer>
+ <layer id="1" name="C1.Стены" width="95" height="16">
+  <data encoding="base64" compression="zlib">
+   eJzt2AtP2lAYxvEz7isTpBfAuWCJ8/Kx9l000Yyq3MFtwTZ4+5j7nwBaGW1ghVNDfJNfaKDHc/rwnhPiWUqIc5xNyet8QYgv2EEBuyhBhwETFsqooIq9Fe4bfxLiHg94xBOe4cZorIj/uZNpIVLpSeaz6wb5OLjCNZpooY0OuuihjwGGuF3hvsOEEN9xhGOc4BR2jOqJ4J6I+n7QfbO8pZe+L9L32EEB664xz3mPBzziCc/wWM8NmmihjQ666KGPAYbv7L5lx45wN91n3jT75Fz2DfJ2cIXrDWR/mKTvcYRjnOAUtvzescv3UIIOAyYslFFBFcXE+7lv2bE1HPj2mf/Meel7nb7X1595WNUmmbv4oXZmdTUi7zu4co8nFp85DXJ3FGcvy5Vzp9TPq6pq7O0Dub9RT07ynj9z8gZ9b8S90u0tl6y9dMB5T+7OR/YbKztD32cCznuTvjfjXuH2lkvuXibgvCd35yP7jZWdpe+zAee9Rd9bca9we8sldy/79rw/n/U9uTsKs7/4LMQlihq/M1GCDgMmLJRRQRV7+Ip9fNNex9U0dWuOUnaOvs/9m7uk8Qx5LXoWy47LIievyX8fN1w30UIbHXTRQx8DDHGLX/iNPxgpXHOUcTbq2tvzfuYn7ze0/89g1XEXuAzRDDE/l6o1RxnnwtNez3j/6yJhn8UljjWta07//y79r4uEfRaXONa0rjnl3/kLXcgowA==
+  </data>
+ </layer>
+ <objectgroup id="7" name="Объекты">
+  <object id="7" x="96.375" y="193" width="432.625" height="14.5">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="9" x="560.047" y="178" width="270.391" height="29.3182">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="14" x="830.455" y="193.156" width="673.545" height="13.7917">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="15" x="1488.75" y="48.2855" width="15" height="144.714">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="17" x="528.25" y="48.25" width="927.75" height="14.75">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="18" x="560.375" y="62.75" width="31.375" height="33">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="19" x="127.667" y="16" width="371.333" height="15.3333">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="20" x="96.3333" y="45.3333" width="15.7879" height="147">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="21" x="529.063" y="191.031" width="2.96875" height="16.4688">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="30" x="532.081" y="189.026" width="3.92527" height="18.4766">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="31" x="536.003" y="187.011" width="4.00339" height="20.4757">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="32" x="539.998" y="185.011" width="4.00339" height="22.4757">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="33" x="543.998" y="182.991" width="4.00339" height="24.4813">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="34" x="547.999" y="181.008" width="4.00044" height="26.4591">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="35" x="552" y="179.037" width="4.00044" height="28.4369">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="36" x="556.044" y="177.982" width="4.00044" height="29.4682">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="37" x="96.3636" y="15.6364" width="31.0909" height="29.7273">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="40" x="499" y="15.75" width="29.125" height="32.6932">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="41" x="1456.03" y="48.2813" width="32.7049" height="28.8438">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="44" name="hero" x="114.195" y="124.436" width="39" height="66.3636">
+   <properties>
+    <property name="BodyType" value="DynamicBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
