@@ -43,7 +43,7 @@ public class GameScreen implements Screen {
     public GameScreen(Main main) {
         this.main = main;
         batch = new SpriteBatch();
-        myHero = new Anim("atlas/Idle.png", 8, 1, Animation.PlayMode.LOOP);
+        myHero = new Anim("atlas/IdleMyHero.atlas", Animation.PlayMode.LOOP);
         inputProcessor = new KeyboardAdapter();
         Gdx.input.setInputProcessor(inputProcessor);
         camera = new OrthographicCamera(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());  // Инициализировали камеру, установили видомость камеры по размеру нашего окна
@@ -125,7 +125,7 @@ public class GameScreen implements Screen {
         rectangleHero.x = body.getPosition().x - rectangleHero.width/2;
         rectangleHero.y = body.getPosition().y - rectangleHero.height/2;
         batch.begin();
-        batch.draw(myHero.getFrame(), rectangleHero.x,  rectangleHero.y);
+        batch.draw(myHero.getFrame(), rectangleHero.x,  rectangleHero.y, rectangleHero.width, rectangleHero.height);
         batch.end();
         myHero.setTime(Gdx.graphics.getDeltaTime());
         physics.debugDraw(camera);
@@ -159,7 +159,7 @@ public class GameScreen implements Screen {
     @Override
     public void dispose() {
         batch.dispose();
-        myHero.disposeImg();
+        myHero.disposeAtlas();
         map.dispose();
         shapeRenderer.dispose();
     }

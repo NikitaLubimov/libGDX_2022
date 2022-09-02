@@ -210,7 +210,7 @@
     <property name="gravityScale" type="float" value="1"/>
    </properties>
   </object>
-  <object id="44" name="hero" x="312.619" y="56.981" width="38.5" height="50">
+  <object id="44" name="hero" x="114.195" y="124.436" width="39" height="66.3636">
    <properties>
     <property name="BodyType" value="DynamicBody"/>
     <property name="gravityScale" type="float" value="1"/>
