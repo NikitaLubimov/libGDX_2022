@@ -10,6 +10,7 @@ public class Physics {
     private final World world;
     private final Box2DDebugRenderer dDebugRenderer;
     private BodyDef def;
+    public final float PPM = 100;
 
     public Physics() {
         world = new World(new Vector2(0, -9.81f), true);
@@ -25,17 +26,21 @@ public class Physics {
         FixtureDef fdef = new FixtureDef(); // класс описывающий физические параметры тела объекта
         PolygonShape polygonShape = new PolygonShape(); // класс шаблон для формирования структуры тела
 
-        if (type.equals("StaticBody")) {def.type = BodyDef.BodyType.StaticBody;}
-        if (type.equals("DynamicBody")) {def.type = BodyDef.BodyType.DynamicBody;}
+        if (type.equals("StaticBody")) {
+            def.type = BodyDef.BodyType.StaticBody;
+        }
+        if (type.equals("DynamicBody")) {
+            def.type = BodyDef.BodyType.DynamicBody;
+        }
 
 
-        def.position.set(rectangle.x + rectangle.width/2, rectangle.y + rectangle.height/2);
+        def.position.set((rectangle.x + rectangle.width / 2) / PPM, (rectangle.y + rectangle.height / 2) / PPM);
         def.gravityScale = 1;
 
-        polygonShape.setAsBox(rectangle.width/2,rectangle.height/2); // метод формирующий наш объект в виде коробки
+        polygonShape.setAsBox(rectangle.width / 2 / PPM, rectangle.height / 2 / PPM); // метод формирующий наш объект в виде коробки
 
         fdef.shape = polygonShape;
-        fdef.friction = 1; // параметр трения (0-10, где 0 очень скользкий)
+        fdef.friction = 0.85f; // параметр трения (0-10, где 0 очень скользкий)
         fdef.density = 1; // плотность
         fdef.restitution = 0; // прыгучесть (0-10, где 0 инерция вся поглощается)
 
@@ -47,11 +52,18 @@ public class Physics {
         return body;
     }
 
-    public void setGravity(Vector2 gravity) {world.setGravity(gravity);}
+    public void setGravity(Vector2 gravity) {
+        world.setGravity(gravity);
+    }
 
     // рассчет физики. 1 параметр - сколько времени прошло с последнего рассчета (сек). 2 параметр - точность рассчета скоростей. 3 параметр - точность рассчета позиций.
-    public void step() {world.step(1/60.0f,3,3);}
-    public void debugDraw(OrthographicCamera camera) {dDebugRenderer.render(world,camera.combined);}
+    public void step() {
+        world.step(1 / 60.0f, 3, 3);
+    }
+
+    public void debugDraw(OrthographicCamera camera) {
+        dDebugRenderer.render(world, camera.combined);
+    }
 
     public void dispose() {
         world.dispose();
