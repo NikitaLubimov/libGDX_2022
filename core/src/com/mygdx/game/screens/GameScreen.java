@@ -3,6 +3,7 @@ package com.mygdx.game.screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -27,7 +28,9 @@ public class GameScreen implements Screen {
     private Anim myHero;
     private Anim myHeroIdle;
     private Anim myHeroRun;
-    private boolean dir;
+    private Anim myHeroAttacks1;
+    private Anim myHeroJump;
+    private boolean dir = true;
     private OrthographicCamera camera;
     private TiledMap map;
     private TmxMapLoader tml;
@@ -38,12 +41,15 @@ public class GameScreen implements Screen {
     private Physics physics;
     private Body body;
     private Rectangle rectangleHero;
+    private Music music;
 
     public GameScreen(Main main) {
         this.main = main;
         batch = new SpriteBatch();
         myHeroIdle = new Anim("atlas/IdleMyHero.atlas", Animation.PlayMode.LOOP, "Idle");
         myHeroRun = new Anim("atlas/RunMyHero.atlas", Animation.PlayMode.LOOP, "Run");
+        myHeroAttacks1 = new Anim("atlas/MyHeroAttacks1.atlas", Animation.PlayMode.LOOP, "Attacks1");
+        myHeroJump = new Anim("atlas/myHeroJump.atlas", Animation.PlayMode.LOOP, "Jump");
         myHero = myHeroIdle;
         camera = new OrthographicCamera(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());  // Инициализировали камеру, установили видомость камеры по размеру нашего окна
         tml = new TmxMapLoader(); // загрузчик карт
@@ -69,6 +75,11 @@ public class GameScreen implements Screen {
                 physics.addObject(rect);
             }
         }
+
+        music = Gdx.audio.newMusic(Gdx.files.internal("2.mp3"));
+        music.setLooping(true);
+        music.play();
+
     }
 
     @Override
@@ -85,18 +96,29 @@ public class GameScreen implements Screen {
 
         // управление камерой право лево
         if (Gdx.input.isKeyPressed(Input.Keys.D)) {
+            dir = true;
             myHero = myHeroRun;
-            body.applyForceToCenter(new Vector2(2, 0), true);
+            body.applyForceToCenter(new Vector2(0.45f, 0), true);
         }
 
         if (Gdx.input.isKeyPressed(Input.Keys.A)) {
+            dir = false;
             myHero = myHeroRun;
-            body.applyForceToCenter(new Vector2(-2, 0), true);
+            body.applyForceToCenter(new Vector2(-0.45f, 0), true);
+        }
+
+        if (Gdx.input.isKeyPressed(Input.Keys.SPACE) && physics.myContList.isOnGround()) {
+            myHero = myHeroJump;
+            body.applyForceToCenter(new Vector2(0, +1f), true);
+        }
+
+        if (Gdx.input.isKeyPressed(Input.Keys.E)) {
+            myHero = myHeroAttacks1;
         }
 
         // зумирование карты ( 1- оригинальное значение )
-        if (Gdx.input.isKeyPressed(Input.Keys.P)) camera.zoom -= 0.01f;
-        if (Gdx.input.isKeyPressed(Input.Keys.M) && camera.zoom > 0) camera.zoom += 0.01f;
+        if (Gdx.input.isKeyPressed(Input.Keys.P)) camera.zoom -= 0.02f;
+        if (Gdx.input.isKeyPressed(Input.Keys.M) && camera.zoom > 0) camera.zoom += 0.02f;
 
         camera.position.x = body.getPosition().x * physics.PPM;
         camera.position.y = body.getPosition().y * physics.PPM;
@@ -104,30 +126,26 @@ public class GameScreen implements Screen {
 
         ScreenUtils.clear(0, 0, 0, 1);
 
-        if (Gdx.input.isKeyPressed(Input.Keys.R)) dir = true;
-        if (Gdx.input.isKeyPressed(Input.Keys.L)) dir = false;
+        if (!myHero.getFrame().isFlipX() && !dir) {
+            myHero.getFrame().flip(true, false);
+        }
 
-//        if (!animRun.getFrame().isFlipX() && !dir) {
-//            animRun.getFrame().flip(true, false);
-//        }
-//
-//        if (animRun.getFrame().isFlipX() && dir) {
-//            animRun.getFrame().flip(true, false);
-//        }
+        if (myHero.getFrame().isFlipX() && dir) {
+            myHero.getFrame().flip(true, false);
+        }
 
         mapRenderer.setView(camera); // отрисовка карты по камере
         mapRenderer.render(layers); // рендер всех слоёв
 
-        rectangleHero.x = body.getPosition().x - rectangleHero.width / 2;
-        rectangleHero.y = body.getPosition().y - rectangleHero.height / 2;
         float x = Gdx.graphics.getWidth() / 2 - rectangleHero.getWidth() / 2 / camera.zoom;
         float y = Gdx.graphics.getHeight() / 2 - rectangleHero.getHeight() / 2 / camera.zoom;
 
         Sprite spr = new Sprite(myHero.getFrame());
-
+        spr.setPosition(x, y);
+        spr.scale(1.5f);
 
         batch.begin();
-        batch.draw(myHero.getFrame(), x, y, rectangleHero.width, rectangleHero.height);
+        batch.draw(myHero.getFrame(), x, y, rectangleHero.width / camera.zoom, rectangleHero.height / camera.zoom);
         batch.end();
         myHero.setTime(Gdx.graphics.getDeltaTime());
         physics.debugDraw(camera);
@@ -165,5 +183,6 @@ public class GameScreen implements Screen {
         map.dispose();
         myHeroRun.disposeAtlas();
         myHeroIdle.disposeAtlas();
+        music.dispose();
     }
 }

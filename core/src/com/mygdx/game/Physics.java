@@ -10,10 +10,13 @@ public class Physics {
     private final World world;
     private final Box2DDebugRenderer dDebugRenderer;
     private BodyDef def;
-    public final float PPM = 100;
+    public final float PPM = 200;
+    public final MyContList myContList;
 
     public Physics() {
         world = new World(new Vector2(0, -9.81f), true);
+        myContList = new MyContList();
+        world.setContactListener(myContList);
         dDebugRenderer = new Box2DDebugRenderer();
 
     }
@@ -40,13 +43,21 @@ public class Physics {
         polygonShape.setAsBox(rectangle.width / 2 / PPM, rectangle.height / 2 / PPM); // метод формирующий наш объект в виде коробки
 
         fdef.shape = polygonShape;
-        fdef.friction = 0.85f; // параметр трения (0-10, где 0 очень скользкий)
+        fdef.friction = 0.55f; // параметр трения (0-10, где 0 очень скользкий)
         fdef.density = 1; // плотность
         fdef.restitution = 0; // прыгучесть (0-10, где 0 инерция вся поглощается)
 
         Body body;
         body = world.createBody(def);
-        body.createFixture(fdef).setUserData("Стена");
+        String name = rectangleMapObject.getName();
+        body.createFixture(fdef).setUserData(name);
+        if (name != null && name.equals("hero")) {
+            polygonShape.setAsBox(rectangle.width / 12 / PPM, rectangle.height / 12 / PPM, new Vector2(0, -rectangle.width / 1.2f / PPM), 0);
+            body.createFixture(fdef).setUserData("ноги");
+            body.setFixedRotation(true);
+            body.getFixtureList().get(body.getFixtureList().size -  1).setSensor(true);
+
+        }
 
         polygonShape.dispose();
         return body;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.1" orientation="orthogonal" renderorder="right-down" width="95" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="45">
+<map version="1.9" tiledversion="1.9.1" orientation="orthogonal" renderorder="right-down" width="95" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="46">
  <tileset firstgid="1" name="main_lev_build" tilewidth="16" tileheight="16" tilecount="10240" columns="128">
   <image source="main_lev_build.png" width="2048" height="1280"/>
  </tileset>
@@ -96,19 +96,19 @@
   </data>
  </layer>
  <objectgroup id="7" name="Объекты">
-  <object id="7" x="96.375" y="193" width="432.625" height="14.5">
+  <object id="7" x="97.375" y="193" width="432.625" height="14.5">
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="gravityScale" type="float" value="1"/>
    </properties>
   </object>
-  <object id="9" x="560.047" y="178" width="270.391" height="29.3182">
+  <object id="9" name="пол" x="560.047" y="176" width="270.391" height="31.3182">
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="gravityScale" type="float" value="1"/>
    </properties>
   </object>
-  <object id="14" x="830.455" y="193.156" width="673.545" height="13.7917">
+  <object id="14" name="пол" x="830.455" y="193.156" width="673.545" height="13.7917">
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="gravityScale" type="float" value="1"/>
@@ -144,49 +144,49 @@
     <property name="gravityScale" type="float" value="1"/>
    </properties>
   </object>
-  <object id="21" x="529.063" y="191.031" width="2.96875" height="16.4688">
+  <object id="21" name="пол" x="529.063" y="191.031" width="2.96875" height="16.4688">
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="gravityScale" type="float" value="1"/>
    </properties>
   </object>
-  <object id="30" x="532.081" y="189.026" width="3.92527" height="18.4766">
+  <object id="30" name="пол" x="532.081" y="189.026" width="3.92527" height="18.4766">
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="gravityScale" type="float" value="1"/>
    </properties>
   </object>
-  <object id="31" x="536.003" y="187.011" width="4.00339" height="20.4757">
+  <object id="31" name="пол" x="536.003" y="187.011" width="4.00339" height="20.4757">
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="gravityScale" type="float" value="1"/>
    </properties>
   </object>
-  <object id="32" x="539.998" y="185.011" width="4.00339" height="22.4757">
+  <object id="32" name="пол" x="539.998" y="185.011" width="4.00339" height="22.4757">
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="gravityScale" type="float" value="1"/>
    </properties>
   </object>
-  <object id="33" x="543.998" y="182.991" width="4.00339" height="24.4813">
+  <object id="33" name="пол" x="543.998" y="182.991" width="4.00339" height="24.4813">
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="gravityScale" type="float" value="1"/>
    </properties>
   </object>
-  <object id="34" x="547.999" y="181.008" width="4.00044" height="26.4591">
+  <object id="34" name="пол" x="547.999" y="181.008" width="4.00044" height="26.4591">
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="gravityScale" type="float" value="1"/>
    </properties>
   </object>
-  <object id="35" x="552" y="179.037" width="4.00044" height="28.4369">
+  <object id="35" name="пол" x="552" y="179.037" width="4.00044" height="28.4369">
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="gravityScale" type="float" value="1"/>
    </properties>
   </object>
-  <object id="36" x="556.044" y="177.982" width="4.00044" height="29.4682">
+  <object id="36" name="пол" x="556.044" y="177.982" width="4.00044" height="29.4682">
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="gravityScale" type="float" value="1"/>
@@ -210,7 +210,7 @@
     <property name="gravityScale" type="float" value="1"/>
    </properties>
   </object>
-  <object id="44" name="hero" x="114.195" y="124.436" width="39" height="66.3636">
+  <object id="44" name="hero" x="114.07" y="125.269" width="39" height="66.3636">
    <properties>
     <property name="BodyType" value="DynamicBody"/>
     <property name="gravityScale" type="float" value="1"/>
