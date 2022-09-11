@@ -1,0 +1,62 @@
+
+MyHeroJump.png
+size: 256, 64
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+Jump
+  rotate: false
+  xy: 2, 2
+  size: 32, 49
+  orig: 128, 64
+  offset: 47, 1
+  index: 2
+Jump
+  rotate: false
+  xy: 36, 7
+  size: 32, 44
+  orig: 128, 64
+  offset: 49, 2
+  index: 5
+Jump
+  rotate: false
+  xy: 70, 7
+  size: 31, 44
+  orig: 128, 64
+  offset: 50, 4
+  index: 4
+Jump
+  rotate: false
+  xy: 103, 6
+  size: 29, 45
+  orig: 128, 64
+  offset: 48, 0
+  index: 8
+Jump
+  rotate: false
+  xy: 134, 7
+  size: 28, 44
+  orig: 128, 64
+  offset: 49, 0
+  index: 1
+Jump
+  rotate: false
+  xy: 164, 7
+  size: 28, 44
+  orig: 128, 64
+  offset: 50, 0
+  index: 6
+Jump
+  rotate: false
+  xy: 194, 4
+  size: 27, 47
+  orig: 128, 64
+  offset: 53, 3
+  index: 3
+Jump
+  rotate: false
+  xy: 223, 10
+  size: 28, 41
+  orig: 128, 64
+  offset: 48, 0
+  index: 7
