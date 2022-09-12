@@ -1,0 +1,76 @@
+
+MyHeroAttacks1.png
+size: 512, 64
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+Attacks1
+  rotate: false
+  xy: 2, 5
+  size: 52, 44
+  orig: 128, 64
+  offset: 45, 0
+  index: 9
+Attacks1
+  rotate: false
+  xy: 56, 5
+  size: 51, 44
+  orig: 128, 64
+  offset: 46, 0
+  index: 8
+Attacks1
+  rotate: false
+  xy: 109, 2
+  size: 45, 47
+  orig: 128, 64
+  offset: 48, 0
+  index: 5
+Attacks1
+  rotate: false
+  xy: 156, 3
+  size: 43, 46
+  orig: 128, 64
+  offset: 54, 0
+  index: 4
+Attacks1
+  rotate: false
+  xy: 201, 2
+  size: 37, 47
+  orig: 128, 64
+  offset: 42, 0
+  index: 3
+Attacks1
+  rotate: false
+  xy: 240, 5
+  size: 38, 44
+  orig: 128, 64
+  offset: 44, 0
+  index: 10
+Attacks1
+  rotate: false
+  xy: 280, 2
+  size: 33, 47
+  orig: 128, 64
+  offset: 44, 0
+  index: 2
+Attacks1
+  rotate: false
+  xy: 315, 2
+  size: 32, 47
+  orig: 128, 64
+  offset: 47, 0
+  index: 6
+Attacks1
+  rotate: false
+  xy: 349, 2
+  size: 30, 47
+  orig: 128, 64
+  offset: 49, 0
+  index: 7
+Attacks1
+  rotate: false
+  xy: 381, 2
+  size: 27, 47
+  orig: 128, 64
+  offset: 49, 0
+  index: 1
