@@ -21,6 +21,8 @@ import com.mygdx.game.Anim;
 import com.mygdx.game.Main;
 import com.mygdx.game.Physics;
 
+import java.util.Iterator;
+
 public class GameScreen implements Screen {
 
     private final Main main;
@@ -70,9 +72,9 @@ public class GameScreen implements Screen {
         layers[3] = map.getLayers().getIndex("C1.Стены");
 
         rectObj = map.getLayers().get("Объекты").getObjects().getByType(RectangleMapObject.class);
-        for (RectangleMapObject rect : rectObj) {
-            if (rect.getName() == null) {
-                physics.addObject(rect);
+        for (int i = 0; i < rectObj.size; i++) {
+            if (!rectObj.get(i).getName().equals("hero")){
+                physics.addObject(rectObj.get(i));
             }
         }
 
@@ -109,7 +111,7 @@ public class GameScreen implements Screen {
 
         if (Gdx.input.isKeyPressed(Input.Keys.SPACE) && physics.myContList.isOnGround()) {
             myHero = myHeroJump;
-            body.applyForceToCenter(new Vector2(0, +1f), true);
+            body.applyForceToCenter(new Vector2(0, +3f), true);
         }
 
         if (Gdx.input.isKeyPressed(Input.Keys.E)) {

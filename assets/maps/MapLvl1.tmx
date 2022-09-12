@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.1" orientation="orthogonal" renderorder="right-down" width="95" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="46">
+<map version="1.9" tiledversion="1.9.1" orientation="orthogonal" renderorder="right-down" width="95" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="47">
  <tileset firstgid="1" name="main_lev_build" tilewidth="16" tileheight="16" tilecount="10240" columns="128">
   <image source="main_lev_build.png" width="2048" height="1280"/>
  </tileset>
@@ -96,7 +96,7 @@
   </data>
  </layer>
  <objectgroup id="7" name="Объекты">
-  <object id="7" x="97.375" y="193" width="432.625" height="14.5">
+  <object id="7" name="пол" x="97.375" y="193" width="432.625" height="14.5">
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="gravityScale" type="float" value="1"/>
@@ -114,31 +114,31 @@
     <property name="gravityScale" type="float" value="1"/>
    </properties>
   </object>
-  <object id="15" x="1488.75" y="48.2855" width="15" height="144.714">
+  <object id="15" name="стена" x="1488.75" y="48.2855" width="15" height="144.714">
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="gravityScale" type="float" value="1"/>
    </properties>
   </object>
-  <object id="17" x="528.25" y="48.25" width="927.75" height="14.75">
+  <object id="17" name="стена" x="528.25" y="48.25" width="927.75" height="14.75">
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="gravityScale" type="float" value="1"/>
    </properties>
   </object>
-  <object id="18" x="560.375" y="62.75" width="31.375" height="33">
+  <object id="18" name="стена" x="560.375" y="62.75" width="31.375" height="27">
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="gravityScale" type="float" value="1"/>
    </properties>
   </object>
-  <object id="19" x="127.667" y="16" width="371.333" height="15.3333">
+  <object id="19" name="стена" x="127.667" y="16" width="371.333" height="15.3333">
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="gravityScale" type="float" value="1"/>
    </properties>
   </object>
-  <object id="20" x="96.3333" y="45.3333" width="15.7879" height="147">
+  <object id="20" name="стена" x="96.3333" y="45.3333" width="15.7879" height="147">
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="gravityScale" type="float" value="1"/>
@@ -192,25 +192,25 @@
     <property name="gravityScale" type="float" value="1"/>
    </properties>
   </object>
-  <object id="37" x="96.3636" y="15.6364" width="31.0909" height="29.7273">
+  <object id="37" name="стена" x="96.3636" y="15.6364" width="31.0909" height="29.7273">
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="gravityScale" type="float" value="1"/>
    </properties>
   </object>
-  <object id="40" x="499" y="15.75" width="29.125" height="32.6932">
+  <object id="40" name="стена" x="499" y="15.75" width="29.125" height="32.6932">
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="gravityScale" type="float" value="1"/>
    </properties>
   </object>
-  <object id="41" x="1456.03" y="48.2813" width="32.7049" height="28.8438">
+  <object id="41" name="стена" x="1456.03" y="48.2813" width="32.7049" height="28.8438">
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="gravityScale" type="float" value="1"/>
    </properties>
   </object>
-  <object id="44" name="hero" x="114.07" y="125.269" width="39" height="66.3636">
+  <object id="44" name="hero" x="111.57" y="126.269" width="39" height="66.3636">
    <properties>
     <property name="BodyType" value="DynamicBody"/>
     <property name="gravityScale" type="float" value="1"/>
